@@ -1,0 +1,8 @@
+body {
+    background: darkcyan;
+}
+
+.img_scale {
+    width: 150px;
+    float: left;
+}

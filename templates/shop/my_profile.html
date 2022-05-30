@@ -1,0 +1,26 @@
+{% extends 'block.html' %}
+{% block title %} Mój profil {% endblock %}
+{% block page %}
+
+Witaj {{ user.username }}<br>
+<div>
+    Dane: <br>
+    Imię : {{ user.first_name }}<br>
+    Nazwisko: {{ user.last_name }}<br>
+    Email: {{ user.email }}<br>
+    <a href="{% url 'change_password' %}">Zmień hasło</a>
+</div>
+Moje przedmioty:<br>
+{% for i in object_list %}
+    {{ i.name }}
+{% endfor %}
+<div>
+
+Moje przedmioty:<br>
+
+<div>
+
+
+</div>
+
+{% endblock %}

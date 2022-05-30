@@ -1,0 +1,19 @@
+{% extends 'block.html' %}
+{% block title %}Usuń{% endblock %}
+
+{% block page %}
+    <h1>Napewno chcesz usunąć ofertę?</h1>
+
+    <div>
+        Usuwana oferta: {{ Clothes.name }}<br>
+        Cena: {{ Clothes.price }} zł<br>
+        Opis: {{ Clothes.description }}
+        <br>-----
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Usuń</button><br>
+        <a href="{% url 'main_page' %}">Anuluj</a>
+    </form>
+
+{% endblock %}

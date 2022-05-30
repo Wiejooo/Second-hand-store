@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'basic.css' %}">
+    <title>Log</title>
+</head>
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.username.label }}
+        {{ form.username }}
+
+        {{ form.password.label }}
+        {{ form.password }}
+        <button type="submit">Zaloguj</button>
+    </form><br>
+
+    <a href="{% url 'main_page' %}">Strona główna</a>
+    <a href="{% url 'register' %}">Rejestracja</a>
+
+    {% for message in messages %}
+        <p id="messages">{{ message }}</p>
+    {% endfor %}
+
+</body>
+</html>

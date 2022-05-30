@@ -1,0 +1,11 @@
+{% extends 'block.html' %}
+{% block title %}Forma{% endblock %}
+{% block page %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Dalej</button>
+    <a href="{% url 'main_page' %}">Anuluj</a>
+</form>
+{% endblock %}
