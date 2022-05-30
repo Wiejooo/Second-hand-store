@@ -1,0 +1,40 @@
+{% extends 'block.html' %}
+{% block title %}Strona główna{% endblock %}
+{% block page %}
+
+    <a href="{% url 'gender_page' gender=0 %}">Dla kobiet</a>
+    <a href="{% url 'gender_page' gender=1 %}">Dla mężczyzn</a>
+    <a href="{% url 'gender_page' gender=2 %}">Dla dzieci</a>
+    <a href="{% url 'main_page' %}">Strona główna</a><br>
+<hr>
+
+{% for i in cloth %}
+        <div>
+            <a href="{% url 'single_cloth' slug=i.slug %}">{{ i.name }}</a>
+            <img src="/media/{{i.img}}" class="img_scale">
+            <p>Opis: {{ i.description }}</p>
+            <p>Cena: {{ i.price }} zł</p><br>
+            <a href="{% url 'edit_offer' i.slug %}">Edytuj</a><a href="{% url 'delete_offer' i.id %}">Usuń</a><br>
+        </div><br><br>
+{% endfor %}<br>
+
+<div class="pagination">
+<span class="step-links">
+    {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+</span>
+</div>
+
+
+{% endblock %}

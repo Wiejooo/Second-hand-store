@@ -1,0 +1,14 @@
+{% extends 'block.html' %}
+{% block title %} Strona główna {% endblock %}
+{% block page %}
+
+<h1>Strona główna</h1>
+<a href="{% url 'add_cloth' %}">Sprzedaj</a><br>
+<div>
+    <h3>Kategorie:</h3>
+    <a href="{% url 'gender_page' gender=0 %}">Dla kobiet</a>
+    <a href="{% url 'gender_page' gender=1 %}">Dla mężczyzn</a>
+    <a href="{% url 'gender_page' gender=2 %}">Dla dzieci</a>
+</div>
+
+{% endblock %}

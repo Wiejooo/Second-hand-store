@@ -1,0 +1,10 @@
+{% extends 'block.html' %}
+{% block title %} Ubranie {% endblock %}
+{% block page %}
+
+{{ cloth.name }}
+<img src="/media/{{cloth.img}}" class="img_scale">
+<p>Opis: {{ cloth.description }}</p>
+<p>Cena: {{ cloth.price }} zł</p><br>
+
+{% endblock %}
