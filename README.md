@@ -1,8 +1,8 @@
 # Second-hand-store
 This is Django aplication for selling clothing. The user can sell and buy unused garments.<br>
 
-THIS IS NOT FINISHED APP. WORKING IN PROGRESS.
-The site doesn't have the style side done yet. For now is raw.<br>
+THIS IS NOT FINISHED APP. WORKING IN PROGRESS.<br>
+The site doesn't have the style side done yet. For now is raw.
 
 ## User
 The user can register by completing the fields: Username, Email, Password, Password confirmation. After that, he can login.<br>
